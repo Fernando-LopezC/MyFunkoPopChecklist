@@ -1,20 +1,16 @@
 import React from 'react';
-import { RUTAS } from '../helpers/constants';
+import { COLOR, ROUTES } from '../helpers/constants';
 import Avatar from '@mui/material/Avatar';
-import { blue } from '@material-ui/core/colors';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-const theme = createTheme();
+import {Link } from 'react-router-dom'
 
 function SignIn() {
   const handleSubmit = (event) => {
@@ -27,7 +23,6 @@ function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
@@ -54,7 +49,7 @@ function SignIn() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: blue[500] }}>
+            <Avatar sx={{ m: 1, bgcolor: COLOR.mainBlue }}>
             </Avatar>
             <Typography component="h1" variant="h5">
               Sign in
@@ -99,7 +94,7 @@ function SignIn() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href={RUTAS.signUp} variant="body2">
+                  <Link to={ROUTES.signUp} variant="body2">
                     Don't have an account? Sign Up
                   </Link>
                 </Grid>
@@ -108,7 +103,7 @@ function SignIn() {
           </Box>
         </Grid>
       </Grid>
-    </ThemeProvider>
+    
   );
 }
 
