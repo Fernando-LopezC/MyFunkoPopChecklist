@@ -1,9 +1,28 @@
-import { useParams } from "react-router-dom"
+import React, { useState } from "react"
+import Banner from "./Banner"
+import FunkoForm from "./FunkoForm"
+import Funko from "./Funko"
 
-function checklist() {
-    const { fandom } = useParams()
 
-    return <p> This is a checklist</p>
+function Checklist() {
+    const [funkos, setFunkos] = useState([])
+
+    function onFormCompleted(data) {
+        setFunkos([...funkos, data])
+    }
+
+    return (
+        <>
+        <Banner />
+        <FunkoForm onFormCompleted={onFormCompleted} />
+        {funkos.map((funko) => (
+            <Funko
+            name={funko.name}
+            picture={funko.picture} 
+            />
+        ))}
+        </>
+    )
 }
 
-export default checklist
+export default Checklist

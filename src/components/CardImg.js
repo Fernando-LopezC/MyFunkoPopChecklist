@@ -13,7 +13,8 @@ function CardImg() {
             alignItems: 'center',
             backgroundColor: COLOR.mainBlue,
             borderRadius: 5,
-            boxShadow: 10
+            boxShadow: 10,
+            my: 5
             }}>
 			<CardContent>
 				<Typography sx={{

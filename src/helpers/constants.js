@@ -3,7 +3,8 @@ import { blue } from "@mui/material/colors";
 export const ROUTES = {
     home: '/',
     signIn: '/signin',
-    signUp: '/signup'
+    signUp: '/signup',
+    checklist: '/checklist'
 };
 
 export const FONTS = {

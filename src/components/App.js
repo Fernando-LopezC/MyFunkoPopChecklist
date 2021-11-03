@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { ROUTES } from '../helpers/constants';
 import { Container } from '@mui/material';
+import Checklist from './Checklist';
 
 
 const App = () => { 
@@ -17,6 +18,7 @@ const App = () => {
        <Route exact path={ROUTES.signUp} component={SignUp} />
      <Container>
      <Switch>
+       <Route exact path={ROUTES.checklist} component={Checklist} />
        <Route exact path={ROUTES.home} component={Home} />
      </Switch>
      <Footer />

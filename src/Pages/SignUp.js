@@ -34,7 +34,7 @@ function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: COLOR }}>
+          <Avatar sx={{ m: 1, bgcolor: COLOR.mainBlue }}>
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
