@@ -1,9 +1,12 @@
+import { Button, TextField } from "@mui/material";
+import { Box } from "@mui/system";
 import PropTypes from "prop-types";
 import { useState } from "react";
 
 function FunkoForm({ onFormCompleted }) {
   const [name, setName] = useState("");
   const [picture, setPicture] = useState("");
+  const [number, setNumber] = useState("")
 
   function onChangeName(event) {
     setName(event.target.value);
@@ -13,37 +16,65 @@ function FunkoForm({ onFormCompleted }) {
     setPicture(event.target.value);
   }
 
+  function onChangeNumber(event) {
+      setNumber(event.target.value);
+  }
+
   function onSubmitForm(event) {
     event.preventDefault();
-    onFormCompleted({ name, picture });
+    onFormCompleted({ name, picture, number });
   }
 
   return (
-    <form className="mt-4 mb-4" onSubmit={onSubmitForm}>
-      <h3>Agrega un funko a tu checklist</h3>
-
-      <div className="form-group">
-        <label>Nombre</label>
-        <input type="text" className="form-control" onChange={onChangeName} />
-      </div>
-
-      <div className="form-group">
-        <label>URL de la imagen</label>
-        <input
-          type="text"
-          className="form-control"
-          onChange={onChangePicture}
-        />
-      </div>
-
-      <button
-        type="submit"
-        className="btn btn-success btn-block"
-        id="agregarProducto"
+      <Box
+      component= 'form'
+      sx={{
+          '& .MuiTextField-root': {m:1, width: '25ch'},
+      }}
+      noValidate
+      autoComplete='off'
+      onSubmit= {onSubmitForm}
       >
-        Agregar funko a la checklist
-      </button>
-    </form>
+          <div>
+              <TextField
+              required
+              id='filled-required'
+              label='Nombre'
+              helperText='Nombre del funko'
+              type= 'text'
+              onChange= {onChangeName}
+              />
+              <TextField
+              required
+              id='filled-required'
+              label='Número'
+              helperText='Número del funko'
+              type= 'number'
+              onChange= {onChangeNumber}
+              />
+              <TextField
+              required
+              id='filled-required'
+              label='Imagen'
+              helperText='URL de la imagen'
+              type= 'url'
+              onChange= {onChangePicture}
+              />
+              <Button
+              color= 'secondary'
+              variant= 'contained'
+              type= 'submit'
+              sx={{
+                  mt: 3,
+                  mb: 2
+              }}
+              >
+                  Agregar Funko
+              </Button>
+          </div>
+
+      </Box>
+    
   );
 }
 
