@@ -35,7 +35,6 @@ function Checklist() {
             />
             ))}
         </Box>
-        <p></p>
         </>
     )
 }
