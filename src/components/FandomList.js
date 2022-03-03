@@ -101,7 +101,7 @@ const itemData = [
     endpoint: 'digimon'
   },
   {
-    img: 'http://www.pdvg.it/es/wp-content/uploads/2017/08/DCLgcq1V0AA9H4k-1.jpg',
+    img: 'https://images8.alphacoders.com/881/thumb-1920-881828.jpg',
     title: 'Monster Hunter',
     endpoint: 'monsterhunter',
     cols: 2
